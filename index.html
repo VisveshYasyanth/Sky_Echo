@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sky Echo</title>
+    <link rel="icon" type="image/png" href="V.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- Logo above search -->
+        <div class="logo-container">
+            <img src="logo.png" alt="Weather Dashboard" class="logo">
+        </div>
+
+        <!-- Search Bar -->
+        <div class="search">
+            <input type="text" id="mainCityInput" placeholder="Enter city">
+            <button onclick="getWeather(document.getElementById('mainCityInput').value)">🔍</button>
+        </div>
+
+        <!-- Slide 1 -->
+        <div class="extra-slides">
+            <div class="card" id="slide1">
+                <h2 id="slide1Title">Madurai</h2>
+                <div class="current" id="slide1Weather">
+                    <p>Country: IN</p>
+                    <p>Sea Level: N/A</p>
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="card" id="slide2">
+                <h2>Current Weather</h2>
+                <div class="current" id="slide2Weather">
+                    <p>Loading...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Forecast Section -->
+        <div class="card" id="forecastSection">
+            <h2>Forecast</h2>
+            <div id="weather" style="display:none;">
+                <table class="forecast-table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Weather</th>
+                            <th>Temp</th>
+                            <th>Rain</th>
+                            <th>Wind</th>
+                        </tr>
+                    </thead>
+                    <tbody id="forecastContainer"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Air Quality Section -->
+        <div class="card" id="airSection">
+            <h2>Air Quality</h2>
+            <div id="airContainer">
+                <p>Loading...</p>
+            </div>
+        </div>
+
+        <!-- Travel & Commute Section -->
+        <div class="card" id="travelSection">
+            <h2>Travel & Commute</h2>
+            <div class="travel-boxes">
+                <div id="airTravelBox" class="travel-box">
+                    Air Travel
+                    <div class="scale-bar">
+                        <div class="scale-fill good" style="width:0%"></div>
+                    </div>
+                    <small>Loading...</small>
+                </div>
+                <div id="drivingBox" class="travel-box">
+                    Driving
+                    <div class="scale-bar">
+                        <div class="scale-fill moderate" style="width:0%"></div>
+                    </div>
+                    <small>Loading...</small>
+                </div>
+            </div>
+        </div>
+
+        <!-- Atmospheric Section -->
+        <div class="card" id="atmosSection">
+            <h2>Atmospheric Parameters</h2>
+            <div id="atmosphericContainer">
+                <table class="atmos-table">
+                    <thead>
+                        <tr>
+                            <th>Parameters</th>
+                            <th>Value</th>
+                        </tr>
+                    </thead>
+                    <tbody id="atmosphericList">
+                        <tr>
+                            <td colspan="2">Loading...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- About Section -->
+        <div class="card" id="aboutSection">
+            <h2>About</h2>
+            <p>Created by Visvesh Yasyanth T V<br>
+            Note: Data may vary based on real-time conditions.</p>
+        </div>
+
+    </div>
+
+    <!-- Forecast Modal -->
+    <div id="forecastModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modalData"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+    
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
